@@ -123,6 +123,7 @@ minetest.register_node("teleporter:teleport_pad", {
         end
 	end,
 	can_dig = function(pos,player)
+		if not player then return end
 		local meta = minetest.env:get_meta(pos)
 		local name = player:get_player_name()
 		local privs = minetest.get_player_privs(name)
